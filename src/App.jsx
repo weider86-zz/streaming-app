@@ -1,26 +1,28 @@
-import React, { useState, lazy, Suspense } from 'react'
-
-const Warning = lazy(async () => ({
-  default: (await import(/* webpackChunkName: "other" */ './Warning')).Warning,
-}))
+import React, { useState } from 'react'
+import { ThemeProvider } from 'styled-components'
+import { lightTheme, darkTheme } from './Styled/Themes'
+import { GlobalStyles } from './Styled/GlobalStyles'
 
 export const App = () => {
-  const [count, setCount] = useState(0)
-
-  const loading = () => <p>Loading...</p>
+  const [theme, setTheme] = useState('light')
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark')
+    } else {
+      setTheme('light')
+    }
+  }
 
   return (
     <>
-      <h1>Hello world</h1>
-      <h2>Count: {count}</h2>
-      <button onClick={() => setCount(count + 1)}>+</button>
-      <button onClick={() => setCount(count - 1)}>-</button>
-
-      {count > 10 && (
-        <Suspense fallback={loading}>
-          <Warning />
-        </Suspense>
-      )}
+      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+        <>
+          <GlobalStyles />
+          <button onClick={toggleTheme}>Toggle theme</button>
+          <h1>{`It's a ${theme === 'light' ? 'light' : 'dark'} theme!`}</h1>
+          <footer></footer>
+        </>
+      </ThemeProvider>
     </>
   )
 }
