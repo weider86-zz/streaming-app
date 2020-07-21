@@ -8,7 +8,7 @@ const ButtonStyled = styled.button`
   background-color: ${({ theme }) => theme.textColor};
   border: ${({ theme }) => theme.bodyBg};
   color: ${({ theme }) => theme.bodyBg};
-  padding: ${(props) => (props.primary ? '12px' : '24px')};
+  padding: ${(props) => (props.primary ? '4px' : '12px')};
   margin-right: 12px;
 `
 
@@ -36,9 +36,8 @@ export const App = () => {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <ButtonStyled onClick={toggleTheme}>Toggle theme1</ButtonStyled>
       <ButtonStyled primary onClick={toggleTheme}>
-        Toggle theme2
+        Toggle theme
       </ButtonStyled>
       <Card>
         <h1>{`It's a ${theme === 'light' ? 'light' : 'dark'} theme!`}</h1>

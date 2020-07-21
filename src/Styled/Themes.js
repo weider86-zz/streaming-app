@@ -1,12 +1,13 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
+import variables from './Andes/_variables.scss'
 
-const lightColor = '#E2E2E2'
-const darkColor = '#363537'
+const lightColor = variables.andesBlue400
+const darkColor = variables.andesGray800
 
 const basicTheme = {
-  fontFamily: `Segoe UI, Helvetica, Arial, sans-serif`,
-  fontSize: '24px',
+  fontFamily: variables.fontFamily,
+  fontSize: variables.fontSizeBase,
 }
 
 export const lightTheme = {

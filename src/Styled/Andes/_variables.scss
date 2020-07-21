@@ -1,0 +1,10 @@
+@import './pallete';
+@import './spacing';
+@import './typography';
+
+:export {
+  fontFamily: $font-family-primary;
+  fontSizeBase: $font-size-base;
+  andesBlue400: $andes-blue-400;
+  andesGray800: $andes-gray-800;
+}
