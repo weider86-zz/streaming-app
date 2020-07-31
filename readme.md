@@ -1,8 +1,8 @@
 # React Styled Components
+A React Styled Components project. Also extract some SASS variables with SASS-Extract to reuse around the project.
+
 ![technology React](https://img.shields.io/badge/technology-React-cyan.svg)
 ![technology Styled Components](https://img.shields.io/badge/technology-Styled%20Components-pink)
-
-A React Styled Components repository. Also added some SASS variables to reuse around the project.
 
 ## Installation
 
