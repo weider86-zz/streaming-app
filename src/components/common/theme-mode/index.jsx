@@ -18,7 +18,7 @@ const ThemeSwitch = styled.div`
     display: none;
   }
   .slider {
-    background-color: #ccc;
+    background-color: #3d3d3d;
     bottom: 0;
     cursor: pointer;
     left: 0;
@@ -38,9 +38,10 @@ const ThemeSwitch = styled.div`
     width: 20px;
   }
   input:checked + .slider {
-    background-color: #268ee6;
+    background-color: #fff;
   }
   input:checked + .slider:before {
+    background-color: #3d3d3d;
     transform: translateX(26px);
   }
   .slider.round {
@@ -53,28 +54,26 @@ const ThemeSwitch = styled.div`
 
 const ThemeMode = ({ theme, changeTheme }) => {
   return (
-    <>
-      <ThemeSwitch>
-        <div>
-          <label className="theme-switch" htmlFor="checkbox">
-            <input
-              type="checkbox"
-              id="checkbox"
-              checked={theme === 'light'}
-              onChange={changeTheme}
-            />
-            <div className="slider round"></div>
-          </label>
-        </div>
-        <div>
-          {theme === 'light' ? (
-            <img src={sun} alt={theme} width={'30px'} />
-          ) : (
-            <img src={moon} alt={theme} width={'30px'} />
-          )}
-        </div>
-      </ThemeSwitch>
-    </>
+    <ThemeSwitch>
+      <div>
+        <label className="theme-switch" htmlFor="checkbox">
+          <input
+            type="checkbox"
+            id="checkbox"
+            checked={theme === 'light'}
+            onChange={changeTheme}
+          />
+          <div className="slider round"></div>
+        </label>
+      </div>
+      <div>
+        {theme === 'light' ? (
+          <img src={sun} alt={theme} width={'30px'} />
+        ) : (
+          <img src={moon} alt={theme} width={'30px'} />
+        )}
+      </div>
+    </ThemeSwitch>
   )
 }
 

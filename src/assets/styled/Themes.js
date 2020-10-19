@@ -14,7 +14,7 @@ const basicTheme = {
 export const lightTheme = {
   ...basicTheme,
   bodyBg: lightColor,
-  textColor: darkColor,
+  textColor: '#3b074c',
 }
 
 export const darkTheme = {
