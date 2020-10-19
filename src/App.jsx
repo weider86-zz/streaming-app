@@ -1,29 +1,18 @@
 import React, { useState } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import { lightTheme, darkTheme } from './Styled/Themes'
-import { GlobalStyles } from './Styled/GlobalStyles'
+import { lightTheme, darkTheme } from './assets/styled/Themes'
+import { GlobalStyles } from './assets/styled/GlobalStyles'
+import { Header } from './components/common/header'
+import { ThemeMode } from './components/common/theme-mode'
+import { Home } from './pages/home'
 
-const ButtonStyled = styled.button`
-  outline: none;
-  background-color: ${({ theme }) => theme.textColor};
-  border: ${({ theme }) => theme.bodyBg};
-  color: ${({ theme }) => theme.bodyBg};
-  padding: ${(props) => (props.primary ? '4px' : '12px')};
-  margin-right: 12px;
+const Main = styled.main`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 `
 
-const borderRed = '5px solid red'
-
-const Card = styled.div`
-  max-width: 350px;
-  border: ${borderRed};
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  margin: 30px auto;
-`
-
-export const App = () => {
+const App = () => {
   const [theme, setTheme] = useState('light')
   const toggleTheme = () => {
     if (theme === 'light') {
@@ -36,12 +25,14 @@ export const App = () => {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <ButtonStyled primary onClick={toggleTheme}>
-        Toggle theme
-      </ButtonStyled>
-      <Card>
-        <h1>{`It's a ${theme === 'light' ? 'light' : 'dark'} theme!`}</h1>
-      </Card>
+      <Header>
+        <ThemeMode theme={theme} changeTheme={toggleTheme} />
+      </Header>
+      <Main>
+        <Home />
+      </Main>
     </ThemeProvider>
   )
 }
+
+export { App }
