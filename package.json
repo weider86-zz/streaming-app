@@ -1,5 +1,5 @@
 {
-  "name": "react-styled-boilerplate",
+  "name": "streaming-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,17 +15,17 @@
       "pre-commit": "pretty-quick --stage npm run lint && npm run test"
     }
   },
-  "author": "Weider Lima <weider86@gmal.com>",
+  "author": "Weider Lima <weider86@gmail.com>",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/weider86/react-boilerplate.git"
+    "url": "git+https://github.com/weider86/streaming-app.git"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/weider86/react-boilerplate/issues"
+    "url": "https://github.com/weider86/streaming-app/issues"
   },
-  "homepage": "https://github.com/weider86/react-boilerplate#readme",
+  "homepage": "https://github.com/weider86/streaming-app#readme",
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.10.5",
@@ -44,6 +44,7 @@
     "eslint": "^7.4.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.3",
+    "file-loader": "^6.1.1",
     "html-webpack-plugin": "^4.3.0",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
