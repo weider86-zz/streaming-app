@@ -2,8 +2,9 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import variables from './Andes/_variables.scss'
 
-const lightColor = variables.andesBlue400
+const lightColor = variables.andesGray70
 const darkColor = variables.andesGray800
+const whiteColor = variables.andesWhite
 
 const basicTheme = {
   fontFamily: variables.fontFamily,
@@ -19,7 +20,7 @@ export const lightTheme = {
 export const darkTheme = {
   ...basicTheme,
   bodyBg: darkColor,
-  textColor: lightColor,
+  textColor: whiteColor,
 }
 
 export const Theme = ({ children }) => (
