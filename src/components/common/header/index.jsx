@@ -43,7 +43,7 @@ const Nav = styled.div`
   }
 `
 
-const Header = ({ theme, changeTheme, children }) => {
+const Header = ({ theme, changeTheme }) => {
   return (
     <StyledHeader>
       <Container>

@@ -1,5 +1,15 @@
 import React from 'react'
+import { CountProvider } from '../../shared/context/Count'
+import { Counter } from '../../components/counter'
+import { Mirror } from '../../components/mirror'
 
-const Home = () => <p>Home</p>
+const Home = () => {
+  return (
+    <CountProvider>
+      <Counter />
+      <Mirror />
+    </CountProvider>
+  )
+}
 
 export { Home }
