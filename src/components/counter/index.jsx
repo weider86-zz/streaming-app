@@ -1,7 +1,7 @@
 import React from 'react'
 import { useCount } from '../../shared/context/Count'
 
-export const Counter = () => {
+const Counter = () => {
   const { count, setCount } = useCount()
 
   return (
@@ -17,3 +17,5 @@ export const Counter = () => {
     </div>
   )
 }
+
+export { Counter }
