@@ -7,6 +7,7 @@ import { Header } from './components/common/header'
 import { MainContainer as Container } from './components/common/main-container'
 import { Home } from './pages/home'
 import { About } from './pages/about'
+import { Catalog } from './pages/catalog'
 
 const Main = styled.main`
   display: flex;
@@ -32,8 +33,9 @@ const App = () => {
         <Container>
           <Main>
             <Switch>
-              <Route path="/about" children={<About />} />
               <Route path="/" exact children={<Home />} />
+              <Route path="/about" children={<About />} />
+              <Route path="/catalog" children={<Catalog />} />
             </Switch>
           </Main>
         </Container>
