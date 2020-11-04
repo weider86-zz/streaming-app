@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.prod.js",
     "dev": "webpack-dev-server --open --config webpack.config.dev.js",
+    "dev-server": "nodemon server.js",
     "test": "jest",
     "format": "pretty-quick",
     "lint": "eslint ./"
@@ -49,6 +50,7 @@
     "husky": "^4.2.5",
     "jest": "^26.1.0",
     "node-sass": "^4.14.1",
+    "nodemon": "^2.0.6",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
     "prop-types": "^15.7.2",
@@ -61,6 +63,9 @@
     "webpack-merge": "^5.0.9"
   },
   "dependencies": {
+    "axios": "^0.21.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useFetch } from '../../shared/hooks/useFetch'
 import { Catalog } from '../catalog'
 import styled from 'styled-components'
+import Axios from 'axios'
 
 const CatalogList = styled.div`
   display: flex;
@@ -40,9 +41,7 @@ const Search = () => {
   const [value, setValue] = useState('')
   const [movie, setMovie] = useState(value)
 
-  const { error, loading, data } = useFetch(
-    `http://www.omdbapi.com/?apikey=629c2d0a&s=${movie}`
-  )
+  const { error, loading, data } = useFetch(`http://localhost:5000/${movie}`)
 
   const handleClick = (e) => {
     e.preventDefault()
@@ -52,6 +51,16 @@ const Search = () => {
   const handleChange = (e) => {
     setValue(e.target.value)
   }
+
+  Axios({
+    method: 'GET',
+    url: 'http://localhost:5000/titanic',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then((res) => {
+    console.log(res.data.movies)
+  })
 
   return (
     <div>
